@@ -1,0 +1,22 @@
+{
+  "expenses": [
+    {
+      "id": "1",
+      "amount": 123,
+      "category": "transporte",
+      "date": "2011-10-05T14:48:00.000Z"
+    },
+    {
+      "id": "2",
+      "amount": 123,
+      "category": "transporte",
+      "date": "2011-10-05T14:48:00.000Z"
+    },
+    {
+      "id": "3",
+      "amount": 123,
+      "category": "transporte",
+      "date": "2011-10-05T14:48:00.000Z"
+    }
+  ]
+}
