@@ -1,4 +1,4 @@
-export const ListExpenses = () => {
+export const ListExpenses = ({ data }: any) => {
   return (
     <main className="px-5 py-3 border border-black flex justify-between my-3">
       <div className="">
@@ -8,7 +8,7 @@ export const ListExpenses = () => {
         </p>
         <p>
           <span>Fecha: </span>
-          <span>{dayjs(data.date).format('YYYY-MM-DD hh:mm')}</span>
+          <span>{data.date}</span>
         </p>
       </div>
       <div>

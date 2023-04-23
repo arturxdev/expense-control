@@ -3,15 +3,16 @@ import dayjs from 'dayjs'
 interface Expense {
   id: string,
   amount: number,
-  date: string,
+  created_at: string,
   category: string
 }
 interface Prop {
   data: Expense
 }
+
 export const Expense = ({ data }: Prop) => {
   return (
-    <div className="px-5 py-3 border border-black flex justify-between my-3">
+    <div className="px-5 py-3 border border-white text-white flex justify-between my-3">
       <div className="">
         <p>
           <span className="">Monto: </span>
@@ -19,7 +20,7 @@ export const Expense = ({ data }: Prop) => {
         </p>
         <p>
           <span>Fecha: </span>
-          <span>{dayjs(data.date).format('YYYY-MM-DD hh:mm')}</span>
+          <span>{dayjs(data.created_at).format('YYYY-MM-DD hh:mm')}</span>
         </p>
       </div>
       <div>
