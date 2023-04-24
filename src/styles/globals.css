@@ -18,14 +18,17 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: black;
+  background: #fefefe;
 }
 
 @layer components {
+  .box {
+    @apply py-3 border-b border-gray-300;
+  }
   .input-primary {
-    @apply border-b border-white text-white bg-black w-full;
+    @apply border-b px-1 py-2 border-gray-400 text-black bg-white w-full;
   }
   .btn-primary{
-    @apply border border-white px-3 py-2 bg-black text-white;
+    @apply border border-blue-500 px-2 py-1 bg-blue-500 text-white rounded-md;
   }
 }
