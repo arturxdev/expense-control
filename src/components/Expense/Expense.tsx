@@ -11,7 +11,7 @@ interface Prop {
 
 export const Expense = ({ data }: Prop) => {
   return (
-    <div className="box flex justify-between my-3">
+    <div className="box flex justify-between my-3 text-black">
       <div className="flex">
         <div className='mr-2 self-center'>
           <div className="w-8 h-8 bg-blue-400 rounded-full"></div>

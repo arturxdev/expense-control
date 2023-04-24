@@ -55,7 +55,7 @@ const Home = () => {
       ) : (
         <main className="p-5 w-full m-auto ">
           <div className='flex justify-between items-baseline'>
-            <p className='font-mono text-lg'>Expense control</p>
+            <p className='font-mono text-black text-lg'>Expense control</p>
             {!addExpense && <button className='btn-primary mt-2' onClick={() => setAddExpense(true)}>Agregar</button>}
             <button className='btn-primary mt-2' onClick={() => supabase.auth.signOut()}>Salir</button>
           </div>
