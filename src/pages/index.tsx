@@ -13,9 +13,7 @@ const Home = () => {
   const [addExpense, setAddExpense] = useState(false)
   const [expenses, setExpenses] = useState([])
   const getExpenses = () => {
-    // const userId = session ? session.user.id : ''
-    // supabase.from('expenses').select().eq('userId', userId).order('created_at', { ascending: false }).then((data) => {
-    supabase.from('expenses').select().order('created_at', { ascending: false }).then((data) => {
+    supabase.from('expenses').select().eq('userId', session?.user.id).order('created_at', { ascending: false }).then((data) => {
       console.log(data)
       if (data.error) {
         console.log(data.error)
@@ -46,12 +44,15 @@ const Home = () => {
     }
   }
   useEffect(() => {
+    console.log(session)
     getExpenses()
   }, [])
   return (
     <div className="" >
       {!session ? (
-        <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} theme="dark" />
+        <div className='p-5'>
+          <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} providers={['google']} />
+        </div>
       ) : (
         <main className="p-5 w-full m-auto ">
           <div className='flex justify-between items-baseline'>
