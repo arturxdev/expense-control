@@ -25,7 +25,7 @@ const Home = () => {
     })
   }
   const notify = () => toast.success('Gasto agregado', {
-    position: "top-right",
+    position: "bottom-center",
     autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
