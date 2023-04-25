@@ -19,7 +19,9 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #fefefe;
+    
 }
+    
 
 @layer components {
   .box {

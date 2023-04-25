@@ -12,7 +12,7 @@ export const AddExpense = ({ createExpense, setAddExpense }: any) => {
     }
   }
   return (
-    <div className="box my-3 text-gray-600">
+    <div className="my-3 text-gray-600">
       <form onSubmit={handleSubmit}>
         <p className="font-mono">Añadir gasto</p>
         <div className="mt-5">

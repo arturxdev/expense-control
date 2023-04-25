@@ -5,6 +5,8 @@ import { ThemeSupa } from '@supabase/auth-ui-shared'
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
+import { Button } from 'primereact/button';
+import { SpeedDial } from 'primereact/speeddial';
 
 
 const Home = () => {
@@ -44,11 +46,11 @@ const Home = () => {
     }
   }
   useEffect(() => {
-    console.log(session)
-    getExpenses()
-  }, [])
+    if (session) getExpenses()
+  }, [session])
+
   return (
-    <div className="" >
+    < div className="" >
       {!session ? (
         <div className='p-5'>
           <Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} providers={['google']} />
@@ -57,8 +59,7 @@ const Home = () => {
         <main className="p-5 w-full m-auto ">
           <div className='flex justify-between items-baseline'>
             <p className='font-mono text-black text-lg'>Expense control</p>
-            {!addExpense && <button className='btn-primary mt-2' onClick={() => setAddExpense(true)}>Agregar</button>}
-            <button className='btn-primary mt-2' onClick={() => supabase.auth.signOut()}>Salir</button>
+            <button className="btn-primary" onClick={() => supabase.auth.signOut()} type="submit">Salir</button>
           </div>
           <div className='mt-5'>
             {addExpense && <AddExpense setAddExpense={setAddExpense} createExpense={createExpense} />}
@@ -68,9 +69,11 @@ const Home = () => {
               <Expense key={expense.id} data={expense} />
             ))}
           </div>
+          <SpeedDial onClick={() => setAddExpense(true)} direction="down" style={{ right: 5, bottom: 5 }} radius={20} />
         </main>
-      )}
-    </div>
+      )
+      }
+    </div >
   )
 }
 
