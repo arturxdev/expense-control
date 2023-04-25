@@ -69,7 +69,7 @@ const Home = () => {
               <Expense key={expense.id} data={expense} />
             ))}
           </div>
-          <SpeedDial onClick={() => setAddExpense(true)} direction="down" style={{ right: 5, bottom: 5 }} radius={20} />
+          <SpeedDial onClick={() => setAddExpense(true)} direction="down" style={{ right: 0, bottom: 0 }} radius={20} />
         </main>
       )
       }
